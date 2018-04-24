@@ -531,6 +531,12 @@ public class MainApp {
 		NextGreaterElement nge = new NextGreaterElement();
 		nge.printNGETrigger();
 		System.out.println();
+
+		System.out.println();
+		System.out.println("Maximum sum such that no two elements are adjacent ...");
+		MaximumSum maxSumObj = new MaximumSum();
+		maxSumObj.MaximumSumTrigger();
+		System.out.println();
 	}
 
 	public static Set<Integer> countDuplicates(int[] arr) {
