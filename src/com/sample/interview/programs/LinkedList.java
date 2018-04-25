@@ -69,10 +69,10 @@ public class LinkedList {
 		last.next = new_node;
 		return;
 	}
-	
-	public void deleteNode(Node node, Node n){
-		if(node == n){
-			if(n.next == null){
+
+	public void deleteNode(Node node, Node n) {
+		if (node == n) {
+			if (n.next == null) {
 				System.out.println("There is only one node and deletion not possible");
 				return;
 			}
@@ -83,7 +83,7 @@ public class LinkedList {
 			return;
 		}
 		Node prev = node;
-		while(prev.next != null && prev.next != n){
+		while (prev.next != null && prev.next != n) {
 			prev = prev.next;
 		}
 		prev.next = prev.next.next;
@@ -155,11 +155,36 @@ public class LinkedList {
 		temp = head;
 
 		// 2) get the (len-n+1)th node from the begining
-		//is same as getting nth from last ;)
+		// is same as getting nth from last ;)
 		for (int i = 1; i < len - n + 1; i++)
 			temp = temp.next;
 
 		System.out.println(temp.data);
+	}
+
+	static int compare(Node node1, Node node2) {
+
+		if (node1 == null && node2 == null) {
+			return 1;
+		}
+		while (node1 != null && node2 != null && node1.data == node2.data) {
+			node1 = node1.next;
+			node2 = node2.next;
+		}
+
+		// if the list are different in size
+		if (node1 != null && node2 != null) {
+			return (node1.data > node2.data ? 1 : -1);
+		}
+
+		// if either of the list has reached end
+		if (node1 != null && node2 == null) {
+			return 1;
+		}
+		if (node1 == null && node2 != null) {
+			return -1;
+		}
+		return 0;
 	}
 
 	// prints content of double linked list
@@ -207,34 +232,60 @@ public class LinkedList {
 		llist.printNthFromLast(3);
 		System.out.println();
 	}
-	
-	public static void deleteNodeFromLinkedListTrigger(){
+
+	public static void deleteNodeFromLinkedListTrigger() {
 		LinkedList list = new LinkedList();
-        list.head = new Node(12);
-        list.head.next = new Node(15);
-        list.head.next.next = new Node(10);
-        list.head.next.next.next = new Node(11);
-        list.head.next.next.next.next = new Node(5);
-        list.head.next.next.next.next.next = new Node(6);
-        list.head.next.next.next.next.next.next = new Node(2);
-        list.head.next.next.next.next.next.next.next = new Node(3);
- 
-        System.out.println("Given Linked List :");
-        list.printList(head);
-        System.out.println("");
-         
-        // Let us delete the node with value 10
-        System.out.println("Deleting node :" + head.next.next.data);
-        list.deleteNode(head, head.next.next);
- 
-        System.out.println("Modified Linked list :");
-        list.printList(head);
-        System.out.println("");
- 
-        // Lets delete the first node
-        System.out.println("Deleting first Node");
-        list.deleteNode(head, head);
-        System.out.println("Modified Linked List");
-        list.printList(head);
+		list.head = new Node(12);
+		list.head.next = new Node(15);
+		list.head.next.next = new Node(10);
+		list.head.next.next.next = new Node(11);
+		list.head.next.next.next.next = new Node(5);
+		list.head.next.next.next.next.next = new Node(6);
+		list.head.next.next.next.next.next.next = new Node(2);
+		list.head.next.next.next.next.next.next.next = new Node(3);
+
+		System.out.println("Given Linked List :");
+		list.printList(head);
+		System.out.println("");
+
+		// Let us delete the node with value 10
+		System.out.println("Deleting node :" + head.next.next.data);
+		list.deleteNode(head, head.next.next);
+
+		System.out.println("Modified Linked list :");
+		list.printList(head);
+		System.out.println("");
+
+		// Lets delete the first node
+		System.out.println("Deleting first Node");
+		list.deleteNode(head, head);
+		System.out.println("Modified Linked List");
+		list.printList(head);
+	}
+
+	public static void compareTwoStringsTrigger() {
+
+		LinkedList list1 = new LinkedList();
+		LinkedList list2 = new LinkedList();
+		Node result = null;
+
+		list1.head = new Node(1);
+		list1.head.next = new Node(2);
+		list1.head.next.next = new Node(3);
+		list1.head.next.next.next = new Node(4);
+		list1.head.next.next.next.next = new Node(5);
+		list1.head.next.next.next.next.next = new Node(6);
+
+		list2.head = new Node(1);
+		list2.head.next = new Node(2);
+		list2.head.next.next = new Node(3);
+		list2.head.next.next.next = new Node(4);
+		list2.head.next.next.next.next = new Node(5);
+		list2.head.next.next.next.next.next = new Node(7);
+
+		int value;
+		value = compare(list1.head, list2.head);
+		System.out.println(value);
+
 	}
 }
