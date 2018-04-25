@@ -537,6 +537,11 @@ public class MainApp {
 		MaximumSum maxSumObj = new MaximumSum();
 		maxSumObj.MaximumSumTrigger();
 		System.out.println();
+		
+		System.out.println("Given a string, find its first non-repeating character ...");
+		FirstNonRepeatingChar obj = new FirstNonRepeatingChar();
+		obj.firstNonRepeatingCharacterTrigger();
+		System.out.println();
 	}
 
 	public static Set<Integer> countDuplicates(int[] arr) {
