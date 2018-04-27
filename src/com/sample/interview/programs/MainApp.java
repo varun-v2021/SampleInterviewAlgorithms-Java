@@ -561,6 +561,12 @@ public class MainApp {
 		CheckDuplicatesWithinK checkForDup = new CheckDuplicatesWithinK();
 		checkForDup.CheckDuplicatesWithinKDistanceTrigger();
 		System.out.println();
+
+		System.out.println();
+		System.out.println("Given an array A[] and a number x, check for pair in A[] with sum as x ...");
+		PairSum pairSum = new PairSum();
+		pairSum.pairSumTriggerFunction();
+		System.out.println();
 	}
 
 	/*
