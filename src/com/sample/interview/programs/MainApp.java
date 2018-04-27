@@ -537,11 +537,43 @@ public class MainApp {
 		MaximumSum maxSumObj = new MaximumSum();
 		maxSumObj.MaximumSumTrigger();
 		System.out.println();
-		
+
 		System.out.println("Given a string, find its first non-repeating character ...");
 		FirstNonRepeatingChar obj = new FirstNonRepeatingChar();
 		obj.firstNonRepeatingCharacterTrigger();
 		System.out.println();
+
+		System.out.println();
+		LinkedList ll3 = new LinkedList();
+		ll3.compareTwoStringsTrigger();
+		System.out.println();
+
+		System.out.println();
+		System.out.println(
+				"You are given a list of n-1 integers and these integers are in the range of 1 to n. There are no duplicates in list. One of the integers is missing in the list. Write an efficient code to find the missing integer.");
+		int a2[] = { 1, 2, 4, 5, 6 };
+		int miss = getMissingNo(a2, 5);
+		System.out.println(miss);
+		System.out.println();
+
+		System.out.println();
+		System.out.println("Check if a given array contains duplicate elements within k distance from each other ...");
+		CheckDuplicatesWithinK checkForDup = new CheckDuplicatesWithinK();
+		checkForDup.CheckDuplicatesWithinKDistanceTrigger();
+		System.out.println();
+	}
+
+	/*
+	 * 1. Get the sum of numbers total = n*(n+1)/2 2. Subtract all the numbers
+	 * from sum and you will get the missing number.
+	 */
+	// Function to ind missing number
+	static int getMissingNo(int a[], int n) {
+		int i, total;
+		total = (n + 1) * (n + 2) / 2;
+		for (i = 0; i < n; i++)
+			total -= a[i];
+		return total;
 	}
 
 	public static Set<Integer> countDuplicates(int[] arr) {
