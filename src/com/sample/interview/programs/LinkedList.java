@@ -187,8 +187,27 @@ public class LinkedList {
 		return 0;
 	}
 
+	public static Node sortedMergeLL(Node a, Node b) {
+		Node result = null;
+		if (a == null) {
+			return b;
+		}
+		if (b == null) {
+			return a;
+		}
+
+		if (a.data <= b.data) {
+			result = a;
+			result.next = sortedMergeLL(a.next, b);
+		} else {
+			result = b;
+			result.next = sortedMergeLL(a, b.next);
+		}
+		return result;
+	}
+
 	// prints content of double linked list
-	public void printList(Node node) {
+	public static void printList(Node node) {
 		while (node != null) {
 			System.out.print(node.data + " ");
 			node = node.next;
@@ -287,5 +306,36 @@ public class LinkedList {
 		value = compare(list1.head, list2.head);
 		System.out.println(value);
 
+	}
+
+	public static void print(Node head) {
+		while (head != null) {
+			System.out.printf("%d ", head.data);
+			head = head.next;
+		}
+		System.out.println("");
+	}
+
+	public static void mergeTwoLinkedListsTrigger() {
+
+		LinkedList list1 = new LinkedList();
+		LinkedList list2 = new LinkedList();
+		Node result = null;
+
+		list1.head = new Node(1);
+		list1.head.next = new Node(3);
+		list1.head.next.next = new Node(5);
+		list1.head.next.next.next = new Node(7);
+		list1.head.next.next.next.next = new Node(9);
+		list1.head.next.next.next.next.next = new Node(11);
+
+		list2.head = new Node(2);
+		list2.head.next = new Node(4);
+		list2.head.next.next = new Node(6);
+		list2.head.next.next.next = new Node(8);
+		list2.head.next.next.next.next = new Node(10);
+		list2.head.next.next.next.next.next = new Node(12);
+
+		Node mergedList = sortedMergeLL(list1.head, list2.head);
 	}
 }
