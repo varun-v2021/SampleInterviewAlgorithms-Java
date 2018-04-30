@@ -570,8 +570,8 @@ public class MainApp {
 
 		System.out.println();
 		System.out.println("Merge two sorted linked lists ...");
-		LinkedList ll4 = new LinkedList();
-		ll4.mergeTwoLinkedListsTrigger();
+		MergeLinkedLists mLinkedLists = new MergeLinkedLists();
+		mLinkedLists.mergeLinkedListsTrigger();
 		System.out.println();
 	}
 
