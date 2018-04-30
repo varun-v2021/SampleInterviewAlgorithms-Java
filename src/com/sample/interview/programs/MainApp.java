@@ -567,6 +567,12 @@ public class MainApp {
 		PairSum pairSum = new PairSum();
 		pairSum.pairSumTriggerFunction();
 		System.out.println();
+
+		System.out.println();
+		System.out.println("Merge two sorted linked lists ...");
+		LinkedList ll4 = new LinkedList();
+		ll4.mergeTwoLinkedListsTrigger();
+		System.out.println();
 	}
 
 	/*
