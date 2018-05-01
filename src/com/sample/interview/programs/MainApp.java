@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import com.sample.adapter.pattern.AudioPlayer;
+import com.sample.amazon.interview.VV;
 import com.sample.composite.pattern.Employee;
 import com.sample.data.structures.BinarySearchTree;
 import com.sample.data.structures.BinaryTree;
@@ -567,11 +568,10 @@ public class MainApp {
 		PairSum pairSum = new PairSum();
 		pairSum.pairSumTriggerFunction();
 		System.out.println();
-
+		
 		System.out.println();
-		System.out.println("Merge two sorted linked lists ...");
-		MergeLinkedLists mLinkedLists = new MergeLinkedLists();
-		mLinkedLists.mergeLinkedListsTrigger();
+		VV amazonInterview = new VV();
+		amazonInterview.maxOccurenceTrigger();
 		System.out.println();
 	}
 
