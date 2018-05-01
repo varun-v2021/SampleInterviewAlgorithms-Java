@@ -13,6 +13,7 @@ import java.util.concurrent.Future;
 
 import com.sample.adapter.pattern.AudioPlayer;
 import com.sample.amazon.interview.VV;
+import com.sample.amazon.interview.VV2;
 import com.sample.composite.pattern.Employee;
 import com.sample.data.structures.BinarySearchTree;
 import com.sample.data.structures.BinaryTree;
@@ -572,6 +573,11 @@ public class MainApp {
 		System.out.println();
 		VV amazonInterview = new VV();
 		amazonInterview.maxOccurenceTrigger();
+		System.out.println();
+		
+		System.out.println();
+		VV2 amazonInterview2 = new VV2();
+		amazonInterview2.lexicographSort();
 		System.out.println();
 	}
 
