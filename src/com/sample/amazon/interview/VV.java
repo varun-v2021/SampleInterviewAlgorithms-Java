@@ -29,6 +29,7 @@ public class VV {
 		}
 
 		List<String> topOccurence = findMaxOccurrence(hMap, 2);
+		System.out.println("Max frequency words in the string ...");
 		System.out.println(topOccurence);
 	}
 
@@ -47,7 +48,7 @@ public class VV {
 		return list;
 	}
 
-	public static void maxOccurenceTrigger(String[] args) {
+	public static void maxOccurenceTrigger() {
 		VV vv = new VV();
 		List<String> except = new ArrayList<>();
 		except.add("and");
