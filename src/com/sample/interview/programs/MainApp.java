@@ -577,6 +577,11 @@ public class MainApp {
 		System.out.println();
 		MaxSumSubSeq.MaxSumSubSeqTrigger();
 		System.out.println();
+		
+		System.out.println();
+		System.out.println("Code to sort array using bubble sort technique ...");
+		BubbleSort.BubbleSortTrigger();
+		System.out.println();
 	}
 
 	/*
